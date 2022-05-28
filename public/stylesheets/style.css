@@ -6,7 +6,6 @@
     --color-3: #7A9E7E;
     --secondary-fg-color: #31493C;
 }
- 
 
 body {
     font-family: sans-serif;
@@ -14,8 +13,13 @@ body {
     color: var(--main-fg-color);
 }
 
-
 .highlight {
+    font-weight: 600;
+    text-decoration: underline;
+    color: var(--primary-fg-color);
+}
+
+.highlight.more {
     font-weight: 800;
     text-decoration: underline wavy;
     color: var(--primary-fg-color);
