@@ -1,14 +1,18 @@
 const express = require('express');
 const router = express.Router();
 
-let defaultName = 'World';
-
 router.get('/', (req, res) => {
-    let { name } = req.query;
-    if (!name) {
-        name = defaultName;
+    const isAuthenticated = req.oidc.isAuthenticated();
+
+    if(!!req.oidc.user) {
+        console.log(JSON.stringify(req.oidc.user));
     }
-    res.render('index', { title: 'My Express App', name });
+
+    res.render('index', {
+        title: 'My Express App',
+        isAuthenticated,
+        user: req.oidc.user
+    });
 });
 
 module.exports = router;

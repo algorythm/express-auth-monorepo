@@ -9,7 +9,28 @@
     <title><%= title %></title>
 </head>
 <body>
-    <h1><%= title %></h1>
-    <p>Hello, <span class="highlight"><%= name %></span>! Welcome to <%= title %>.</p>
+    <header>
+        <nav>
+            <ul>
+                <% if(!isAuthenticated){ %>
+                <li><a href="/login/">Login</a></li>
+                <% } else { %>
+                <li><a href="/logout/">Logout</a></li>
+                <% } %>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1><%= title %></h1>
+        <p>
+            Hello, <span class="highlight more"><%= user?.nickname ?? "World" %></span>! Welcome to <%= title %>.
+            <% if(!isAuthenticated) {%>Please login to continue <% } %>
+        </p>
+
+        <% if(isAuthenticated) { %>
+        <img src="<%= user.picture %>" alt="">
+        <pre><%= JSON.stringify(user, null, 2) %></pre>
+        <% } %>
+    </main>
 </body>
 </html>
