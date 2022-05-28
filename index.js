@@ -12,7 +12,13 @@ const oidcConfig = {
     secret: process.env.OIDC_SECRET,
     baseURL: process.env.OIDC_BASEURL,
     clientID: process.env.OIDC_CLIENTID,
+    clientSecret: process.env.OIDC_CLIENTSECRET,
     issuerBaseURL: process.env.OIDC_ISSUER,
+    authorizationParams: {
+        response_type: "code",
+        audience: "http://localhost:3001",
+        scope: "openid profile email"
+    }
 };
 app.use(auth(oidcConfig));
 
