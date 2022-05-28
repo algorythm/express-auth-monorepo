@@ -15,8 +15,24 @@ router.get('/', (req, res) => {
 router.get('/items', requiresAuth(), async (req, res) => {
     const isAuthenticated = req.oidc.isAuthenticated();
 
-    const apiResponse = await axios.get('http://localhost:3001/items');
-    const items = apiResponse.data;
+    let items = [];
+    let { token_type, access_token } = req.oidc.accessToken;
+    console.log('extracted token stuff');
+
+
+    console.log('token type:', token_type);
+    console.log('access token:', access_token);
+
+    try {
+        const apiResponse = await axios.get('http://localhost:3001/items', {
+            headers: {
+                authorization: `Bearer ${access_token}`,
+            }
+        });
+        items = apiResponse.data;
+    } catch {
+        console.error('ERROR: failed to fetch items from server');
+    }
     res.render('items', {
         title: 'Items',
         isAuthenticated,
