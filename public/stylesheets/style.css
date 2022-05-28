@@ -23,8 +23,13 @@ a {
 nav {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: var(--main-bg-color-800);
     padding: var(--empty-space-s);
+}
+
+nav img {
+    max-height: var(--empty-space-x);
 }
 
 nav ul {
@@ -85,4 +90,8 @@ pre {
     font-weight: 800;
     text-decoration: underline wavy;
     color: var(--primary-fg-color);
+}
+
+p {
+    font-weight: 200;;
 }

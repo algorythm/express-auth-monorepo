@@ -5,4 +5,7 @@
             "color": "#ff408177"}
     ]},
     "editor.rulers": [80, 120],
+    "workbench.colorCustomizations": {
+        "titleBar.border": "#DB5461"
+    }
 }
