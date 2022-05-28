@@ -1,0 +1,22 @@
+* {
+    --main-bg-color: #001A23;
+    --main-fg-color: #e8f1f2;
+    --primary-fg-color: #B3EFB2;
+    --color-2: #7A9E7E;
+    --color-3: #7A9E7E;
+    --secondary-fg-color: #31493C;
+}
+ 
+
+body {
+    font-family: sans-serif;
+    background-color: var(--main-bg-color);
+    color: var(--main-fg-color);
+}
+
+
+.highlight {
+    font-weight: 800;
+    text-decoration: underline wavy;
+    color: var(--primary-fg-color);
+}
