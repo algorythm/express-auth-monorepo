@@ -27,5 +27,5 @@ made by the Auth0 team here: <https://www.youtube.com/watch?v=jFitx8gf7rA>.
 This will change after NX has been added. For now, check the READMEs in the two
 sub projects:
 
-- [Frontend](fe/README.md)
-- [Items API](items-api/README.md)
+- [Frontend](services/fe/README.md)
+- [Items API](services/items-api/README.md)
